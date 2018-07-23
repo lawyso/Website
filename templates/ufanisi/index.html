@@ -1,0 +1,154 @@
+{% extends 'ufanisi/base.html' %}
+    {%load static %}
+    {% block content%}
+<div class="clearfix"> </div>
+<div class="container">
+<!---End-header--->
+			<!--start-image-slider---->
+					<div class="image-slider">
+						<!-- Slideshow 1 -->
+					    <ul class="rslides" id="slider1">
+						  <li><img src="{%static 'ufanisi/images/project3.jpg' %}" alt="">
+							  <div class="text">Farming has proved to be our Foundation</div>
+						  </li>
+							<li><img src="http://www.forumkenya.org/images/slides/1.jpg" alt="">
+								<div class="text">Caption Two</div>
+							</li>
+							<li><img src="{%static 'ufanisi/images/project5.jpg' %}" alt="">
+								<div class="text">Caption Two</div>
+							</li>
+					      <li><img src="{%static 'ufanisi/images/project7.png' %}" alt="">
+							  <div class="text">Caption Two</div>
+						  </li>
+					      <li><img src="{%static 'ufanisi/images/project1.png' %}" alt="">
+							  <div class="text">Caption Two</div>
+						  </li>
+					      <li><img src="{%static 'ufanisi/images/project2.jpg' %}" alt="">
+							  <div class="text">Dairy milk production is key to human, this is why we give it a priority.</div>
+						  </li>
+					    </ul>
+						 <!-- Slideshow 2 -->
+					</div>
+					<!--End-image-slider---->
+		 </div>
+		 <!---start-content----->
+		 <div class="content">
+		      <div class="container">
+				 <div class="content-grids">
+					 <h3>A forum where members would give each other financial, social, emotional, mental and spiritual support whenever necessary.We focus on upholding the best of the cultural, social and economic heritage of the members and their local communities.
+</h3>
+					 <div class="col-md-4 contnt-grids">
+						 <img src="{%static 'ufanisi/images/social.jpg' %}" class="img-responsive" alt=""/>
+						 <div class="caption2">
+							 <h3><a href="#">Social Issues & Charities</a></h3>							 
+						 </div>
+					 </div>
+					 <div class="col-md-4 contnt-grids cntr">
+						 <img src="{%static 'ufanisi/images/w1.jpg' %}" class="img-responsive" alt=""/>
+						 <div class="caption2">
+							 <h3><a href="#">Education & Research</a></h3>							 
+						 </div>
+					 </div>
+					 <div class="col-md-4 contnt-grids">
+						 <img src="{%static 'ufanisi/images/Karuga-chicken.jpg' %}" class="img-responsive" alt=""/>
+						 <div class="caption2">
+							 <h3><a href="#">Business & projects</a></h3>
+						 </div>
+					 </div>
+					 <div class="clearfix"></div>
+				</div>
+		     </div>
+	     </div>
+		 <!---start-content//----->
+		 <div class="recent">
+			 <div class="container">
+				 <div class="recent-head">
+					 <h3>OUR OBJECTIVES</h3>
+					 <p>Our main objective is to bring adjustment between the resources available and felt need of our members.</p>
+				 </div>
+				 <div class="charitys">
+					 <div class="col-md-4 chrt_grid">
+						 <div class="chrty">
+							  <h3>Financial Aid</h3>
+
+							 <p>To inculcate the savings and banking habits among members.We promote saving and teach financial management skills </p><br>
+							 <p>To gain from collective wisdom in organising and managing our own finance and distributing the benefits among ourselves.</p>
+
+						 </div>
+					 </div>
+					 <div class="col-md-4 chrt_grid middle">
+						 <div class="chrty">
+							  <h3>Social</h3>
+							  <p>To bring coordination bring the individuals, groups and organization to focus their point and challange their objectives for fulfillement.</p><br>
+							 <p>To abolish the difference among individuals, develop spirit of common interest and sacrifice and also participate collectively in community programs.</p>
+						 </div>
+					 </div>
+					 <div class="col-md-4 chrt_grid">
+						 <div class="chrty">
+							  <h3>Leadership</h3>
+
+							 <p>To develop democratic leadership among members through their participatio in community programs.</p><br>
+							 <p>To launch necessary reforms in community for eradiction of community evils.</p>
+
+						 </div>
+					 </div>
+					 <div class="clearfix"></div>
+				 </div>
+				 <div class="clearfix"></div>
+			 </div>
+		 </div>		 
+		 <!---->
+		 <div class="join">
+			 <div class="container">
+				 <div class="col-md-9 join-info">
+				 <h3>We Do A Let To Make All The members Of The the group Happy</h3>
+				 </div>
+				 <div class="col-md-3 join-link">
+				 <a href="{% url 'Ufanisi:contact' %}">Join Us</a>
+				 </div>
+				 <div class="clearfix"></div>
+			 </div>
+		 </div>
+		 <!---->
+		 <div class="featured">
+			 <div class="container">
+			 <div class="project_grids">
+				 <div class="col-md-4 project1 fetur">
+					 <h3>FEATURED PROJECTS</h3>
+					 <img src="{%static 'ufanisi/images/r1.jpg' %}" class="img-responsive" alt=""/>
+					 <p>A consultative meeting among the leadership to determine and implement the projects.</p>
+				 </div>
+				 <div class="col-md-4 project2 fetur">
+					 <h3>NEWS & EVENTS</h3>
+					 <div class="event">
+						 {% for post in blogs %}
+
+							<div class="post">
+
+								<h1><a href="{{post.get_absolute_url}}">{{post.title}}</a> </h1>
+								<p>{{post.body|safe|truncatewords:"20"|linebreaks}}<a href="{{post.get_absolute_url}}">Read more</a></p>
+
+							 </div>
+
+						{% endfor %}
+					 </div>
+
+				 </div>
+				 <div class="col-md-4 project3 fetur">
+					 <h3>PROGRAM AREAS</h3>
+					 <ul>
+						 <li><a href="#">> Community Development</a></li>
+						 <li><a href="#">> Members Education</a></li>
+						 <li><a href="#">> Charity Works</a></li>
+						 <li><a href="#">> Business </a></li>
+						 <li><a href="#">> Farming</a></li>
+						 <li><a href="#">> Donations</a></li>
+						 <li class="last"><a href="#">> Group Attivities</a></li>
+				     </ul>
+				 </div>
+				 <div class="clearfix"></div>
+			 </div>
+			 </div>
+		 </div>
+{% endblock%}
+

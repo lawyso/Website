@@ -1,0 +1,20 @@
+{%extends 'portal/base.html'%}
+    {%load static%}
+{%load bootstrap3 %}
+
+{% load i18n %}
+{% block content %}
+<div class="col-md-10 col-md-offset-1">
+     <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title text-center">Your Inbox Messages</h3>
+
+                </div>
+                <div class="panel-body" style="text-transform:Uppercase;">
+                    {% load inbox %}
+
+                </div>
+     </div>
+</div>
+
+{% endblock content %}

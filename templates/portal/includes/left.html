@@ -1,0 +1,51 @@
+{% load static %}
+<div class="sidebar-menu">
+<header class="logo">
+<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="/"> <span id="logo"> <h3>United Ufanisi</h3></span>
+<!--<img id="logo" src="" alt="Logo"/>-->
+</a>
+</header>
+<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
+<!--/down-->
+    <div class="down">
+        <p style="float:center;"><a href="/portal/"><img  class="img-responsive" style="float:center;width:80px;height:80px;" src="{% if request.user.profile.avatar.url %}{{ user.profile.avatar.url }}{%else%}{% static 'portal/images/user.jpg' %}{%endif%}"></a></p>
+              <a href="/portal/"><span class=" name-caret">{{request.user.username}}</span></a>
+
+            <ul>
+                 <li><a class="tooltips" href="{% url 'account_change_password' %}"><span>Change Password</span><i class="lnr lnr-user"></i></a></li>
+                    <li><a class="tooltips" href="{% url 'account_logout' %}"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+            </ul>
+    </div>
+    <br><br>
+       <!--//down-->
+   <div class="menu">
+            <ul id="menu" >
+                <li><a href="/portal/"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
+
+
+            <li id="menu-academico" ><a><i class="lnr lnr-user"></i> <span>Profile</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                 <ul id="menu-academico-sub" >
+                    <li id="menu-academico-avaliacoes" ><a href="{% url 'profiles:profile_view' %}">Profile Summary</a></li>
+                    <li id="menu-academico-boletim" ><a href="{% url 'profiles:update' %}">Update Profile</a></li>
+
+                  </ul>
+             </li>
+
+            <li><a><i class="lnr lnr-envelope"></i> <span>Mail Box</span><span class="fa fa-angle-right" style="float: right"></span></a>
+               <ul>
+                <li><a href="{% url 'messages_compose' %}"><i class="fa fa-inbox"></i> Compose mail</a></li>
+                <li><a href="{% url 'messages_inbox' %}"><i class="fa fa-inbox"></i> Inbox<span class="badge">
+
+												{{ messages_inbox_count }}
+												</span></a></li>
+                   <li><a href="{% url 'messages_outbox' %}"><i class="fa fa-inbox"></i> Outbox</a></li>
+                   <li><a href="{% url 'messages_trash' %}"><i class="fa fa-inbox"></i> Trash</a></li>
+
+
+              </ul>
+            </li>
+
+
+          </ul>
+        </div>
+  </div>

@@ -1,0 +1,42 @@
+{%extends 'portal/base.html'%}
+{%load static%}
+{%load bootstrap3 %}
+
+{% block title %}{{ user.username }} | {{ block.super }}{% endblock title %}
+
+
+{% block content %}
+<div class="col-md-10 col-md-offset-1">
+     <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title text-center">Your Profile Summary</h3>
+
+                </div>
+                <div class="panel-body" style="text-transform:Uppercase;">
+
+
+    {% if user.profile.avatar %}
+    <img src="{{ user.profile.avatar.url }}" alt="my pics" width="200" height="200" class="img-responsive img-circle" style="float:center;">
+    {% endif %}
+    <p><span style="font-weight:bolder;">Full name:</span> {{ user.get_full_name }}</p><br>
+    <p><span style="font-weight:bolder;">Username:</span>  {{ user.username }}</p><br>
+    <p><span style="font-weight:bolder;">Email: </span> {{ user.email }}</p><br>
+
+    <p><span style="font-weight:bolder;">Gender: </span> {{ user.profile.gender }}</p><br>
+
+    <p><span style="font-weight:bolder;">Designation:</span>  {{ user.profile.tagline }}</p><br>
+    <p><span style="font-weight:bolder;">Description:</span>  {{ user.profile.description }}</p><br>
+
+    <p><span style="font-weight:bolder;">Birthday: </span> {{ user.profile.dob }}</p><br>
+
+    <p><span style="font-weight:bolder;">Joining Date: </span> {{ user.profile.date_of_joining }}</p><br>
+
+    <p><span style="font-weight:bolder;">Membership No: </span> {{ user.profile.membership_no }}</p><br>
+
+    <p><span style="font-weight:bolder;">Next of Kin: </span> {{ user.profile.next_of_kin }}</p><br>
+
+</div>
+        </div>
+</div>
+
+{% endblock content %}

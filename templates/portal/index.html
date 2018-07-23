@@ -1,0 +1,13 @@
+{%extends 'portal/base.html'%}
+{%load static%}
+{%load bootstrap3 %}
+
+{% block title %}{{ user.username }} | {{ block.super }}{% endblock title %}
+
+
+{% block content %}
+<div class="jumbotron">
+  <p class="alert text-danger" style="font-size:24px; align:center">Website under maintanance</p>
+  <p>Some of the links might not work as expected.</p>
+</div>
+{% endblock content %}

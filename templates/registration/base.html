@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Ufanisi Login</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'/>
+    <link href="{%static 'bootstrap/css/bootstrap.min.css'  %}" rel="stylesheet" media="all">
+    <script src="{%static 'bootstrap/jquery-3.3.1.min.js' %}"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="row">
+            <h2 class="alert alert-success text-center"> Ufanisi Members Login</h2>
+            {% block content %}
+
+            {%endblock%}
+        </div>
+    </div>
+<script src="{%static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
+

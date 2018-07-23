@@ -1,0 +1,53 @@
+{% extends 'ufanisi/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+        {% load humanize%}
+{%block content%}
+<div class="col-md-1">
+
+</div>
+        <div class="col-md-10 col-md-offset-0.5">
+            <br>
+
+            <h1 style="color:black;font-size:30px;font-weight:bolder;font-family:Times New Roman, Times, serif;">{{ post.title }} </h1>
+            <hr>
+            <div class="date">
+                    <p style="font-size:13px;color:green;font-weight:bold;">Posted on: {{post.created|date:"Y-m-d"}}</p>
+            </div>
+            <hr>
+
+             <p class="family">{{post.body|safe|linebreaks}}</p>
+            <br>
+            <blockquote>
+                {% if  post.blog_comments.count > 0 %}
+                <p class="alert-info" style="font-size:20px;color:blue;font-weight:bold;"><strong>Comments</strong></p>
+                <br>
+                {%for comment in post.blog_comments.all %}
+                <p><img  class="img-responsive img-circle" style="float:left;width:42px;height:42px;" src="{% if request.user.user_profile.image %}{{request.user.user_profile.image.url}}{%else%}{% static 'portal/images/user.jpg' %}{%endif%}">
+                {{comment.comment}}</p>
+                <br>
+                <footer style="font-size:13px;color:black;font-weight:bold;">By {{comment.user}}<small class="pull-right">{{comment.timestamp|naturaltime}}</small> </footer>
+                <br>
+                {%endfor%}
+                
+                {%else%}
+
+                <h4 class="alert-warning">No Comments</h4>
+                {%endif%}
+            </blockquote>
+            {% if request.user.is_authenticated %}
+            <form class="form-horizontal" method="POST" action="">
+                {%csrf_token%}
+                {% bootstrap_form form layout='horizontal' %}
+                <input class="btn btn-info btn-sm" value="Comment" type="submit">
+            </form>
+            {%else%}
+            <h3 class="alert-danger">Please <a href="{% url 'account_login' %}">login</a> to add a comment</h3>
+            {%endif%}
+        </div>
+
+<div class="col-md-1">
+
+</div>
+
+{%endblock%}

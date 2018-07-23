@@ -1,0 +1,55 @@
+{% extends 'ufanisi/base.html' %}
+    {%load static %}
+{% load bootstrap3 %}
+    {% block content%}
+		<!---start-content----->
+		<div class="content">
+			<div class="container">
+				<!---start-contact---->
+				<div class="contact">
+					<div class="contact-header">
+							<h3>Contact</h3>
+							<ol class="breadcrumb">
+							  <li><a href="#">Home</a></li>
+							  <li class="active">Contact</li>						  
+							</ol>
+				  </div>
+				  <div class="contact_head">
+					  <p>Your feedback is highly appreciated.Reach us and let us share your experience and meet your expectactions.</p>
+				   </div>
+		 <div class="contact-grids">	
+			  <div class="col-md-6 contact_left">
+			 		<h3>Contact Form</h3>
+
+
+					<form role="form" action="" method="post">
+						{% csrf_token %}
+						{% bootstrap_form form %}
+						<input type="submit" class="btn btn-primary" value="Submit">
+					</form>
+
+			 </div>
+			 <div class="col-md-6 contact_right">	
+				   <h3>Address</h3>
+				  <div class="address">
+					 <ul>
+					 <li>Accra House,Oginga Odinga Street</li>
+					 <li>P.O BOX 15452-40100 Kisumu</li>
+					 <li>Kenya.</li>
+					 <li>Phone:(254) 704028120</li>
+					 <li>Fax: (1212) 123 45 678</li>
+					 <li>Email:   <a href="mailto:info@unitedufanisi">info@unitedufanisi.org</a></li>
+					 <li>Follow on:  <a href="https://web.facebook.com/united.ufanisi/">Facebook</a><a href="#">Twitter</a></li>
+					 </ul>
+				  </div>					
+			 </div>
+			 <div class="clearfix"></div>
+		 </div>
+
+				  <div class="map">
+					 <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Kisumu,+Kenya&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+				  </div>
+				<!---End-contact---->		
+			</div>
+		</div>
+		{% endblock %}
