@@ -7,7 +7,7 @@
 </header>
 <div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
 <!--/down-->
-    <div class="down">
+    <div class="down" style="background-color: #ffffff;border: 1px solid black;opacity: 1;filter: alpha(opacity=60);">
         <p style="float:center;"><a href="/portal/"><img  class="img-responsive" style="float:center;width:80px;height:80px;" src="{% if request.user.profile.avatar.url %}{{ user.profile.avatar.url }}{%else%}{% static 'portal/images/user.jpg' %}{%endif%}"></a></p>
               <a href="/portal/"><span class=" name-caret">{{request.user.username}}</span></a>
 

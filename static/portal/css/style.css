@@ -8,7 +8,9 @@ html, body{
 	font-family: 'Roboto', sans-serif;
     font-size: 100%;
   	overflow-x: hidden;
-	background:#FFFFFF;
+	background-image: url('/static/portal/images/Profile_Background.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 body a{
 	transition:0.5s all;
