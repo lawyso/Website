@@ -41,11 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.humanize',
+    'embed_video',
         # my local apps
     'Ufanisi',
     'blog',
     'profiles',
     'django_messages',
+    'mezzanine',
     'tinymce',
     'notify',
         #3rd party apps
