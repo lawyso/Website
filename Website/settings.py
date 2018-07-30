@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'blog',
     'profiles',
     'django_messages',
-    'mezzanine',
     'tinymce',
     'notify',
         #3rd party apps
